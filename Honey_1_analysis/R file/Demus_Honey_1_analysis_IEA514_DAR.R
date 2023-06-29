@@ -25,7 +25,7 @@ View(df0)
 
 # Deletion of unnecessary columns and change of 'Floral' column name
 df <- df0[, c(-1, -3:-7)] # floral data
-colnames(df)[1] ="Sample"
+colnames(df)[1] = "Sample"
 View(df)
 
 #### Data for HCA ####
@@ -56,22 +56,22 @@ df$Sample <- as.factor(df$Sample)
 # Bar plot
 jpeg('figs/barplot_Li.jpeg', res = 300, units = 'cm', height = 8, width = 8)
 par(mar = c(4,4,1,0.5))
-barplot(df$Li, xaxt = 'n', cex.axis = 0.3, 
+barplot(df$Li, xaxt = 'n', cex.axis = 0.4, 
      xlab = 'Floral', 
      ylab = 'Li [unknown]',
      col = as.factor(df$Sample),
      width = c(0.84, 0.84, 0.84, 0.84, 0.84, 0.84))
-axis(1, at = 1:nrow(df), labels = samples, las = 2, cex.axis = 0.3)
+axis(1, at = 1:nrow(df), labels = samples, las = 2, cex.axis = 0.4)
 legend('topleft', c('Clover','Honeydew','Kamahi','Manufacturing','Manuka',
                     'Polyfloral'), pch = c(15,15,15,15,15,15),
-       col = c('black','red','green','blue','turquoise','magenta'), cex = 0.3)
+       col = c('black','red','green','blue','turquoise','magenta'), cex = 0.4)
 dev.off()
 
 
-# Boxplots
+# Box plot
 jpeg('figs/boxplot_Li.jpeg', res = 300, units = 'cm', height = 8, width = 8)
 par(mar = c(4,2,1,0.5)) 
-plot(df$Sample, df$Li, xlab = 'Floral', ylab = '', cex.axis = 0.3)
+plot(df$Sample, df$Li, xlab = 'Floral', ylab = '', cex.axis = 0.4) # no need ylab as it is redundant
 dev.off()
 
 
@@ -80,22 +80,22 @@ dev.off()
 # Bar plot
 jpeg('figs/barplot_B.jpeg', res = 300, units = 'cm', height = 8, width = 8)
 par(mar = c(4,4,1,0.5))
-barplot(df$B, xaxt = 'n', cex.axis = 0.3,
+barplot(df$B, xaxt = 'n', cex.axis = 0.4,
         xlab = 'Floral', 
         ylab = 'B [unknown]',
         col = as.factor(df$Sample),
         width = c(0.84, 0.84, 0.84, 0.84, 0.84, 0.84))
-axis(1, at = 1:nrow(df), labels = samples, las = 2, cex.axis = 0.3)
+axis(1, at = 1:nrow(df), labels = samples, las = 2, cex.axis = 0.4)
 legend('bottomleft', c('Clover','Honeydew','Kamahi','Manufacturing','Manuka',
                     'Polyfloral'), pch = c(15,15,15,15,15,15),
-       col = c('black','red','green','blue','turquoise','magenta'), cex = 0.3)
+       col = c('black','red','green','blue','turquoise','magenta'), cex = 0.4)
 dev.off()
 
 
-# Boxplots
+# Box plots
 jpeg('figs/boxplot_B.jpeg', res = 300, units = 'cm', height = 8, width = 8)
 par(mar = c(4,2,1,0.5)) 
-plot(df$Sample, df$B, xlab = 'Floral', ylab = '', cex.axis = 0.3)
+plot(df$Sample, df$B, xlab = 'Floral', ylab = '', cex.axis = 0.4) 
 dev.off()
 
 
@@ -104,22 +104,22 @@ dev.off()
 # Bar plot
 jpeg('figs/barplot_Na.jpeg', res = 300, units = 'cm', height = 8, width = 8)
 par(mar = c(4,4,1,0.5))
-barplot(df$Na, xaxt = 'n', cex.axis = 0.3, 
+barplot(df$Na, xaxt = 'n', cex.axis = 0.4, 
         xlab = 'Floral', 
         ylab = 'Na [unknown]',
         col = as.factor(df$Sample),
         width = c(0.84, 0.84, 0.84, 0.84, 0.84, 0.84))
-axis(1, at = 1:nrow(df), labels = samples, las = 2, cex.axis = 0.3)
-legend('bottomleft', c('Clover','Honeydew','Kamahi','Manufacturing','Manuka',
+axis(1, at = 1:nrow(df), labels = samples, las = 2, cex.axis = 0.4)
+legend('topleft', c('Clover','Honeydew','Kamahi','Manufacturing','Manuka',
                     'Polyfloral'), pch = c(15,15,15,15,15,15),
-       col = c('black','red','green','blue','turquoise','magenta'), cex = 0.3)
+       col = c('black','red','green','blue','turquoise','magenta'), cex = 0.4)
 dev.off()
 
 
-# Boxplots
+# Box plot
 jpeg('figs/boxplot_Na.jpeg', res = 300, units = 'cm', height = 8, width = 8)
 par(mar = c(4,2,1,0.5))
-plot(df$Sample, df$Na, xlab = 'Floral', ylab = '', cex.axis = 0.3)
+plot(df$Sample, df$Na, xlab = 'Floral', ylab = '', cex.axis = 0.4) 
 dev.off()
 
 
@@ -128,22 +128,22 @@ dev.off()
 # Bar plot
 jpeg('figs/barplot_Mg.jpeg', res = 300, units = 'cm', height = 8, width = 8)
 par(mar = c(4,4,1,0.5))
-barplot(df$Mg, xaxt = 'n', cex.axis = 0.3,
+barplot(df$Mg, xaxt = 'n', cex.axis = 0.4,
         xlab = 'Floral', 
         ylab = 'Mg [unknown]',
         col = as.factor(df$Sample),
         width = c(0.84, 0.84, 0.84, 0.84, 0.84, 0.84))
-axis(1, at = 1:nrow(df), labels = samples, las = 2, cex.axis = 0.3)
+axis(1, at = 1:nrow(df), labels = samples, las = 2, cex.axis = 0.4)
 legend('topleft', c('Clover','Honeydew','Kamahi','Manufacturing','Manuka',
                        'Polyfloral'), pch = c(15,15,15,15,15,15),
-       col = c('black','red','green','blue','turquoise','magenta'), cex = 0.3)
+       col = c('black','red','green','blue','turquoise','magenta'), cex = 0.4)
 dev.off()
 
 
-# Boxplots
+# Box plot
 jpeg('figs/boxplot_Mg.jpeg', res = 300, units = 'cm', height = 8, width = 8)
 par(mar = c(4,2,1,0.5)) 
-plot(df$Sample, df$Mg, xlab = 'Floral', ylab = '', cex.axis = 0.3) 
+plot(df$Sample, df$Mg, xlab = 'Floral', ylab = '', cex.axis = 0.4) 
 dev.off()
 
 
@@ -152,22 +152,22 @@ dev.off()
 # Bar plot
 jpeg('figs/barplot_Al.jpeg', res = 300, units = 'cm', height = 8, width = 8)
 par(mar = c(4,4,1,0.5))
-barplot(df$Al, xaxt = 'n', cex.axis = 0.3,
+barplot(df$Al, xaxt = 'n', cex.axis = 0.4,
         xlab = 'Floral', 
         ylab = 'Al [unknown]',
         col = as.factor(df$Sample),
         width = c(0.84, 0.84, 0.84, 0.84, 0.84, 0.84))
-axis(1, at = 1:nrow(df), labels = samples, las = 2, cex.axis = 0.3)
+axis(1, at = 1:nrow(df), labels = samples, las = 2, cex.axis = 0.4)
 legend('topleft', c('Clover','Honeydew','Kamahi','Manufacturing','Manuka',
                     'Polyfloral'), pch = c(15,15,15,15,15,15),
-       col = c('black','red','green','blue','turquoise','magenta'), cex = 0.3)
+       col = c('black','red','green','blue','turquoise','magenta'), cex = 0.4)
 dev.off()
 
 
-# Boxplots
+# Box plot
 jpeg('figs/boxplot_Al.jpeg', res = 300, units = 'cm', height = 8, width = 8)
 par(mar = c(4,2,1,0.5)) 
-plot(df$Sample, df$Al, xlab = 'Floral', ylab = '', cex.axis = 0.3) 
+plot(df$Sample, df$Al, xlab = 'Floral', ylab = '', cex.axis = 0.4) 
 dev.off()
 
 
@@ -176,22 +176,22 @@ dev.off()
 # Bar plot
 jpeg('figs/barplot_K.jpeg', res = 300, units = 'cm', height = 8, width = 8)
 par(mar = c(4,4,1,0.5))
-barplot(df$K, xaxt = 'n', cex.axis = 0.3,
+barplot(df$K, xaxt = 'n', cex.axis = 0.4,
         xlab = 'Floral', 
         ylab = 'K [unknown]',
         col = as.factor(df$Sample),
         width = c(0.84, 0.84, 0.84, 0.84, 0.84, 0.84))
-axis(1, at = 1:nrow(df), labels = samples, las = 2, cex.axis = 0.3)
+axis(1, at = 1:nrow(df), labels = samples, las = 2, cex.axis = 0.4)
 legend('topleft', c('Clover','Honeydew','Kamahi','Manufacturing','Manuka',
                     'Polyfloral'), pch = c(15,15,15,15,15,15),
-       col = c('black','red','green','blue','turquoise','magenta'), cex = 0.3)
+       col = c('black','red','green','blue','turquoise','magenta'), cex = 0.4)
 dev.off()
 
 
-# Boxplots
+# Box plot
 jpeg('figs/boxplot_K.jpeg', res = 300, units = 'cm', height = 8, width = 8)
 par(mar = c(4,2,1,0.5)) 
-plot(df$Sample, df$K, xlab = 'Floral', ylab = '', cex.axis = 0.3) 
+plot(df$Sample, df$K, xlab = 'Floral', ylab = '', cex.axis = 0.4) 
 dev.off()
 
 
@@ -200,22 +200,22 @@ dev.off()
 # Bar plot
 jpeg('figs/barplot_Ca.jpeg', res = 300, units = 'cm', height = 8, width = 8)
 par(mar = c(4,4,1,0.5))
-barplot(df$Ca, xaxt = 'n', cex.axis = 0.3,
+barplot(df$Ca, xaxt = 'n', cex.axis = 0.4,
         xlab = 'Floral', 
         ylab = 'Ca [unknown]',
         col = as.factor(df$Sample),
         width = c(0.84, 0.84, 0.84, 0.84, 0.84, 0.84))
-axis(1, at = 1:nrow(df), labels = samples, las = 2, cex.axis = 0.3)
+axis(1, at = 1:nrow(df), labels = samples, las = 2, cex.axis = 0.4)
 legend('topleft', c('Clover','Honeydew','Kamahi','Manufacturing','Manuka',
                     'Polyfloral'), pch = c(15,15,15,15,15,15),
-       col = c('black','red','green','blue','turquoise','magenta'), cex = 0.3)
+       col = c('black','red','green','blue','turquoise','magenta'), cex = 0.4)
 dev.off()
 
 
-# Boxplots
+# Box plot
 jpeg('figs/boxplot_Ca.jpeg', res = 300, units = 'cm', height = 8, width = 8)
 par(mar = c(4,2,1,0.5)) 
-plot(df$Sample, df$Ca, xlab = 'Floral', ylab = '', cex.axis = 0.3) 
+plot(df$Sample, df$Ca, xlab = 'Floral', ylab = '', cex.axis = 0.4) 
 dev.off()
 
 
@@ -224,22 +224,22 @@ dev.off()
 # Bar plot
 jpeg('figs/barplot_V.jpeg', res = 300, units = 'cm', height = 8, width = 8)
 par(mar = c(4,4,1,0.5))
-barplot(df$V, xaxt = 'n', cex.axis = 0.3,
+barplot(df$V, xaxt = 'n', cex.axis = 0.4,
         xlab = 'Floral', 
         ylab = 'V [unknown]',
         col = as.factor(df$Sample),
         width = c(0.84, 0.84, 0.84, 0.84, 0.84, 0.84))
-axis(1, at = 1:nrow(df), labels = samples, las = 2, cex.axis = 0.3)
+axis(1, at = 1:nrow(df), labels = samples, las = 2, cex.axis = 0.4)
 legend('topleft', c('Clover','Honeydew','Kamahi','Manufacturing','Manuka',
                     'Polyfloral'), pch = c(15,15,15,15,15,15),
-       col = c('black','red','green','blue','turquoise','magenta'), cex = 0.3)
+       col = c('black','red','green','blue','turquoise','magenta'), cex = 0.4)
 dev.off()
 
 
-# Boxplots
+# Box plot
 jpeg('figs/boxplot_V.jpeg', res = 300, units = 'cm', height = 8, width = 8)
 par(mar = c(4,2,1,0.5)) 
-plot(df$Sample, df$V, xlab = 'Floral', ylab = '', cex.axis = 0.3) 
+plot(df$Sample, df$V, xlab = 'Floral', ylab = '', cex.axis = 0.4) 
 dev.off()
 
 
@@ -248,22 +248,22 @@ dev.off()
 # Bar plot
 jpeg('figs/barplot_Cr.jpeg', res = 300, units = 'cm', height = 8, width = 8)
 par(mar = c(4,4,1,0.5))
-barplot(df$Cr, xaxt = 'n', cex.axis = 0.3,
+barplot(df$Cr, xaxt = 'n', cex.axis = 0.4,
         xlab = 'Floral', 
         ylab = 'Cr [unknown]',
         col = as.factor(df$Sample),
         width = c(0.84, 0.84, 0.84, 0.84, 0.84, 0.84))
-axis(1, at = 1:nrow(df), labels = samples, las = 2, cex.axis = 0.3)
+axis(1, at = 1:nrow(df), labels = samples, las = 2, cex.axis = 0.4)
 legend('topleft', c('Clover','Honeydew','Kamahi','Manufacturing','Manuka',
                     'Polyfloral'), pch = c(15,15,15,15,15,15),
-       col = c('black','red','green','blue','turquoise','magenta'), cex = 0.3)
+       col = c('black','red','green','blue','turquoise','magenta'), cex = 0.4)
 dev.off()
 
 
-# Boxplots
+# Box plot
 jpeg('figs/boxplot_Cr.jpeg', res = 300, units = 'cm', height = 8, width = 8)
 par(mar = c(4,2,1,0.5)) 
-plot(df$Sample, df$Cr, xlab = 'Floral', ylab = '', cex.axis = 0.3) 
+plot(df$Sample, df$Cr, xlab = 'Floral', ylab = '', cex.axis = 0.4) 
 dev.off()
 
 
@@ -272,22 +272,22 @@ dev.off()
 # Bar plot
 jpeg('figs/barplot_Mn.jpeg', res = 300, units = 'cm', height = 8, width = 8)
 par(mar = c(4,4,1,0.5))
-barplot(df$Mn, xaxt = 'n', cex.axis = 0.3,
+barplot(df$Mn, xaxt = 'n', cex.axis = 0.4,
         xlab = 'Floral', 
         ylab = 'Mn [unknown]',
         col = as.factor(df$Sample),
         width = c(0.84, 0.84, 0.84, 0.84, 0.84, 0.84))
-axis(1, at = 1:nrow(df), labels = samples, las = 2, cex.axis = 0.3)
+axis(1, at = 1:nrow(df), labels = samples, las = 2, cex.axis = 0.4)
 legend('topleft', c('Clover','Honeydew','Kamahi','Manufacturing','Manuka',
                     'Polyfloral'), pch = c(15,15,15,15,15,15),
-       col = c('black','red','green','blue','turquoise','magenta'), cex = 0.3)
+       col = c('black','red','green','blue','turquoise','magenta'), cex = 0.4)
 dev.off()
 
 
-# Boxplots
+# Box plot
 jpeg('figs/boxplot_Mn.jpeg', res = 300, units = 'cm', height = 8, width = 8)
 par(mar = c(4,2,1,0.5)) 
-plot(df$Sample, df$Mn, xlab = 'Floral', ylab = '', cex.axis = 0.3) 
+plot(df$Sample, df$Mn, xlab = 'Floral', ylab = '', cex.axis = 0.4) 
 dev.off()
 
 
@@ -296,22 +296,22 @@ dev.off()
 # Bar plot
 jpeg('figs/barplot_Fe.jpeg', res = 300, units = 'cm', height = 8, width = 8)
 par(mar = c(4,4,1,0.5))
-barplot(df$Fe, xaxt = 'n', cex.axis = 0.3,
+barplot(df$Fe, xaxt = 'n', cex.axis = 0.4,
         xlab = 'Floral', 
         ylab = 'Fe [unknown]',
         col = as.factor(df$Sample),
         width = c(0.84, 0.84, 0.84, 0.84, 0.84, 0.84))
-axis(1, at = 1:nrow(df), labels = samples, las = 2, cex.axis = 0.3)
+axis(1, at = 1:nrow(df), labels = samples, las = 2, cex.axis = 0.4)
 legend('topleft', c('Clover','Honeydew','Kamahi','Manufacturing','Manuka',
                     'Polyfloral'), pch = c(15,15,15,15,15,15),
-       col = c('black','red','green','blue','turquoise','magenta'), cex = 0.3)
+       col = c('black','red','green','blue','turquoise','magenta'), cex = 0.4)
 dev.off()
 
 
-# Boxplots
+# Box plot
 jpeg('figs/boxplot_Fe.jpeg', res = 300, units = 'cm', height = 8, width = 8)
 par(mar = c(4,2,1,0.5)) 
-plot(df$Sample, df$Fe, xlab = 'Floral', ylab = '', cex.axis = 0.3) 
+plot(df$Sample, df$Fe, xlab = 'Floral', ylab = '', cex.axis = 0.4) 
 dev.off()
 
 
@@ -320,22 +320,22 @@ dev.off()
 # Bar plot
 jpeg('figs/barplot_Co.jpeg', res = 300, units = 'cm', height = 8, width = 8)
 par(mar = c(4,4,1,0.5))
-barplot(df$Co, xaxt = 'n', cex.axis = 0.3,
+barplot(df$Co, xaxt = 'n', cex.axis = 0.4,
         xlab = 'Floral', 
         ylab = 'Co [unknown]',
         col = as.factor(df$Sample),
         width = c(0.84, 0.84, 0.84, 0.84, 0.84, 0.84))
-axis(1, at = 1:nrow(df), labels = samples, las = 2, cex.axis = 0.3)
+axis(1, at = 1:nrow(df), labels = samples, las = 2, cex.axis = 0.4)
 legend('topleft', c('Clover','Honeydew','Kamahi','Manufacturing','Manuka',
                     'Polyfloral'), pch = c(15,15,15,15,15,15),
-       col = c('black','red','green','blue','turquoise','magenta'), cex = 0.3)
+       col = c('black','red','green','blue','turquoise','magenta'), cex = 0.4)
 dev.off()
 
 
-# Boxplots
+# Box plot
 jpeg('figs/boxplot_Co.jpeg', res = 300, units = 'cm', height = 8, width = 8)
 par(mar = c(4,2,1,0.5)) 
-plot(df$Sample, df$Co, xlab = 'Floral', ylab = '', cex.axis = 0.3) 
+plot(df$Sample, df$Co, xlab = 'Floral', ylab = '', cex.axis = 0.4) 
 dev.off()
 
 
@@ -344,22 +344,22 @@ dev.off()
 # Bar plot
 jpeg('figs/barplot_Ni.jpeg', res = 300, units = 'cm', height = 8, width = 8)
 par(mar = c(4,4,1,0.5))
-barplot(df$Ni, xaxt = 'n', cex.axis = 0.3,
+barplot(df$Ni, xaxt = 'n', cex.axis = 0.4,
         xlab = 'Floral', 
         ylab = 'Ni [unknown]',
         col = as.factor(df$Sample),
         width = c(0.84, 0.84, 0.84, 0.84, 0.84, 0.84))
-axis(1, at = 1:nrow(df), labels = samples, las = 2, cex.axis = 0.3)
+axis(1, at = 1:nrow(df), labels = samples, las = 2, cex.axis = 0.4)
 legend('topleft', c('Clover','Honeydew','Kamahi','Manufacturing','Manuka',
                     'Polyfloral'), pch = c(15,15,15,15,15,15),
-       col = c('black','red','green','blue','turquoise','magenta'), cex = 0.3)
+       col = c('black','red','green','blue','turquoise','magenta'), cex = 0.4)
 dev.off()
 
 
-# Boxplots
+# Box plot
 jpeg('figs/boxplot_Ni.jpeg', res = 300, units = 'cm', height = 8, width = 8)
 par(mar = c(4,2,1,0.5)) 
-plot(df$Sample, df$Ni, xlab = 'Floral', ylab = '', cex.axis = 0.3) 
+plot(df$Sample, df$Ni, xlab = 'Floral', ylab = '', cex.axis = 0.4) 
 dev.off()
 
 
@@ -368,22 +368,22 @@ dev.off()
 # Bar plot
 jpeg('figs/barplot_Cu.jpeg', res = 300, units = 'cm', height = 8, width = 8)
 par(mar = c(4,4,1,0.5))
-barplot(df$Cu, xaxt = 'n', cex.axis = 0.3,
+barplot(df$Cu, xaxt = 'n', cex.axis = 0.4,
         xlab = 'Floral', 
         ylab = 'Cu [unknown]',
         col = as.factor(df$Sample),
         width = c(0.84, 0.84, 0.84, 0.84, 0.84, 0.84))
-axis(1, at = 1:nrow(df), labels = samples, las = 2, cex.axis = 0.3)
+axis(1, at = 1:nrow(df), labels = samples, las = 2, cex.axis = 0.4)
 legend('topleft', c('Clover','Honeydew','Kamahi','Manufacturing','Manuka',
                     'Polyfloral'), pch = c(15,15,15,15,15,15),
-       col = c('black','red','green','blue','turquoise','magenta'), cex = 0.3)
+       col = c('black','red','green','blue','turquoise','magenta'), cex = 0.4)
 dev.off()
 
 
-# Boxplots
+# Box plot
 jpeg('figs/boxplot_Cu.jpeg', res = 300, units = 'cm', height = 8, width = 8)
 par(mar = c(4,2,1,0.5)) 
-plot(df$Sample, df$Cu, xlab = 'Floral', ylab = '', cex.axis = 0.3) 
+plot(df$Sample, df$Cu, xlab = 'Floral', ylab = '', cex.axis = 0.4) 
 dev.off()
 
 
@@ -392,22 +392,22 @@ dev.off()
 # Bar plot
 jpeg('figs/barplot_Zn.jpeg', res = 300, units = 'cm', height = 8, width = 8)
 par(mar = c(4,4,1,0.5))
-barplot(df$Zn, xaxt = 'n', cex.axis = 0.3,
+barplot(df$Zn, xaxt = 'n', cex.axis = 0.4,
         xlab = 'Floral', 
         ylab = 'Zn [unknown]',
         col = as.factor(df$Sample),
         width = c(0.84, 0.84, 0.84, 0.84, 0.84, 0.84))
-axis(1, at = 1:nrow(df), labels = samples, las = 2, cex.axis = 0.3)
+axis(1, at = 1:nrow(df), labels = samples, las = 2, cex.axis = 0.4)
 legend('topleft', c('Clover','Honeydew','Kamahi','Manufacturing','Manuka',
                     'Polyfloral'), pch = c(15,15,15,15,15,15),
-       col = c('black','red','green','blue','turquoise','magenta'), cex = 0.3)
+       col = c('black','red','green','blue','turquoise','magenta'), cex = 0.4)
 dev.off()
 
 
-# Boxplots
+# Box plot
 jpeg('figs/boxplot_Zn.jpeg', res = 300, units = 'cm', height = 8, width = 8)
 par(mar = c(4,2,1,0.5)) 
-plot(df$Sample, df$Zn, xlab = 'Floral', ylab = '', cex.axis = 0.3) 
+plot(df$Sample, df$Zn, xlab = 'Floral', ylab = '', cex.axis = 0.4) 
 dev.off()
 
 
@@ -416,22 +416,22 @@ dev.off()
 # Bar plot
 jpeg('figs/barplot_Ga.jpeg', res = 300, units = 'cm', height = 8, width = 8)
 par(mar = c(4,4,1,0.5))
-barplot(df$Ga, xaxt = 'n', cex.axis = 0.3,
+barplot(df$Ga, xaxt = 'n', cex.axis = 0.4,
         xlab = 'Floral', 
         ylab = 'Ga [unknown]',
         col = as.factor(df$Sample),
         width = c(0.84, 0.84, 0.84, 0.84, 0.84, 0.84))
-axis(1, at = 1:nrow(df), labels = samples, las = 2, cex.axis = 0.3)
+axis(1, at = 1:nrow(df), labels = samples, las = 2, cex.axis = 0.4)
 legend('topleft', c('Clover','Honeydew','Kamahi','Manufacturing','Manuka',
                     'Polyfloral'), pch = c(15,15,15,15,15,15),
-       col = c('black','red','green','blue','turquoise','magenta'), cex = 0.3)
+       col = c('black','red','green','blue','turquoise','magenta'), cex = 0.4)
 dev.off()
 
 
-# Boxplots
+# Box plot
 jpeg('figs/boxplot_Ga.jpeg', res = 300, units = 'cm', height = 8, width = 8)
 par(mar = c(4,2,1,0.5)) 
-plot(df$Sample, df$Ga, xlab = 'Floral', ylab = '', cex.axis = 0.3) 
+plot(df$Sample, df$Ga, xlab = 'Floral', ylab = '', cex.axis = 0.4) 
 dev.off()
 
 
@@ -440,22 +440,22 @@ dev.off()
 # Bar plot
 jpeg('figs/barplot_Rb.jpeg', res = 300, units = 'cm', height = 8, width = 8)
 par(mar = c(4,4,1,0.5))
-barplot(df$Rb, xaxt = 'n', cex.axis = 0.3,
+barplot(df$Rb, xaxt = 'n', cex.axis = 0.4,
         xlab = 'Floral', 
         ylab = 'Rb [unknown]',
         col = as.factor(df$Sample),
         width = c(0.84, 0.84, 0.84, 0.84, 0.84, 0.84))
-axis(1, at = 1:nrow(df), labels = samples, las = 2, cex.axis = 0.3)
+axis(1, at = 1:nrow(df), labels = samples, las = 2, cex.axis = 0.4)
 legend('topleft', c('Clover','Honeydew','Kamahi','Manufacturing','Manuka',
                     'Polyfloral'), pch = c(15,15,15,15,15,15),
-       col = c('black','red','green','blue','turquoise','magenta'), cex = 0.3)
+       col = c('black','red','green','blue','turquoise','magenta'), cex = 0.4)
 dev.off()
 
 
-# Boxplots
+# Box plot
 jpeg('figs/boxplot_Rb.jpeg', res = 300, units = 'cm', height = 8, width = 8)
 par(mar = c(4,2,1,0.5)) 
-plot(df$Sample, df$Rb, xlab = 'Floral', ylab = '', cex.axis = 0.3) 
+plot(df$Sample, df$Rb, xlab = 'Floral', ylab = '', cex.axis = 0.4) 
 dev.off()
 
 
@@ -464,22 +464,22 @@ dev.off()
 # Bar plot
 jpeg('figs/barplot_Sr.jpeg', res = 300, units = 'cm', height = 8, width = 8)
 par(mar = c(4,4,1,0.5))
-barplot(df$Sr, xaxt = 'n', cex.axis = 0.3,
+barplot(df$Sr, xaxt = 'n', cex.axis = 0.4,
         xlab = 'Floral', 
         ylab = 'Sr [unknown]',
         col = as.factor(df$Sample),
         width = c(0.84, 0.84, 0.84, 0.84, 0.84, 0.84))
-axis(1, at = 1:nrow(df), labels = samples, las = 2, cex.axis = 0.3)
+axis(1, at = 1:nrow(df), labels = samples, las = 2, cex.axis = 0.4)
 legend('topleft', c('Clover','Honeydew','Kamahi','Manufacturing','Manuka',
                     'Polyfloral'), pch = c(15,15,15,15,15,15),
-       col = c('black','red','green','blue','turquoise','magenta'), cex = 0.3)
+       col = c('black','red','green','blue','turquoise','magenta'), cex = 0.4)
 dev.off()
 
 
-# Boxplots
+# Box plot
 jpeg('figs/boxplot_Sr.jpeg', res = 300, units = 'cm', height = 8, width = 8)
 par(mar = c(4,2,1,0.5)) 
-plot(df$Sample, df$Sr, xlab = 'Floral', ylab = '', cex.axis = 0.3) 
+plot(df$Sample, df$Sr, xlab = 'Floral', ylab = '', cex.axis = 0.4) 
 dev.off()
 
 
@@ -488,22 +488,22 @@ dev.off()
 # Bar plot
 jpeg('figs/barplot_Ag.jpeg', res = 300, units = 'cm', height = 8, width = 8)
 par(mar = c(4,4,1,0.5))
-barplot(df$Ag, xaxt = 'n', cex.axis = 0.3,
+barplot(df$Ag, xaxt = 'n', cex.axis = 0.4,
         xlab = 'Floral', 
         ylab = 'Ag [unknown]',
         col = as.factor(df$Sample),
         width = c(0.84, 0.84, 0.84, 0.84, 0.84, 0.84))
-axis(1, at = 1:nrow(df), labels = samples, las = 2, cex.axis = 0.3)
+axis(1, at = 1:nrow(df), labels = samples, las = 2, cex.axis = 0.4)
 legend('topleft', c('Clover','Honeydew','Kamahi','Manufacturing','Manuka',
                     'Polyfloral'), pch = c(15,15,15,15,15,15),
-       col = c('black','red','green','blue','turquoise','magenta'), cex = 0.3)
+       col = c('black','red','green','blue','turquoise','magenta'), cex = 0.4)
 dev.off()
 
 
-# Boxplots
+# Box plot
 jpeg('figs/boxplot_Ag.jpeg', res = 300, units = 'cm', height = 8, width = 8)
 par(mar = c(4,2,1,0.5)) 
-plot(df$Sample, df$Ag, xlab = 'Floral', ylab = '', cex.axis = 0.3) 
+plot(df$Sample, df$Ag, xlab = 'Floral', ylab = '', cex.axis = 0.4) 
 dev.off()
 
 
@@ -512,22 +512,22 @@ dev.off()
 # Bar plot
 jpeg('figs/barplot_Cs.jpeg', res = 300, units = 'cm', height = 8, width = 8)
 par(mar = c(4,4,1,0.5))
-barplot(df$Cs, xaxt = 'n', cex.axis = 0.3,
+barplot(df$Cs, xaxt = 'n', cex.axis = 0.4,
         xlab = 'Floral', 
         ylab = 'Cs [unknown]',
         col = as.factor(df$Sample),
         width = c(0.84, 0.84, 0.84, 0.84, 0.84, 0.84))
-axis(1, at = 1:nrow(df), labels = samples, las = 2, cex.axis = 0.3)
+axis(1, at = 1:nrow(df), labels = samples, las = 2, cex.axis = 0.4)
 legend('topleft', c('Clover','Honeydew','Kamahi','Manufacturing','Manuka',
                     'Polyfloral'), pch = c(15,15,15,15,15,15),
-       col = c('black','red','green','blue','turquoise','magenta'), cex = 0.3)
+       col = c('black','red','green','blue','turquoise','magenta'), cex = 0.4)
 dev.off()
 
 
-# Boxplots
+# Box plot
 jpeg('figs/boxplot_Cs.jpeg', res = 300, units = 'cm', height = 8, width = 8)
 par(mar = c(4,2,1,0.5)) 
-plot(df$Sample, df$Cs, xlab = 'Floral', ylab = '', cex.axis = 0.3) 
+plot(df$Sample, df$Cs, xlab = 'Floral', ylab = '', cex.axis = 0.4) 
 dev.off()
 
 
@@ -536,22 +536,22 @@ dev.off()
 # Bar plot
 jpeg('figs/barplot_Ba.jpeg', res = 300, units = 'cm', height = 8, width = 8)
 par(mar = c(4,4,1,0.5))
-barplot(df$Ba, xaxt = 'n', cex.axis = 0.3,
+barplot(df$Ba, xaxt = 'n', cex.axis = 0.4,
         xlab = 'Floral', 
         ylab = 'Ba [unknown]',
         col = as.factor(df$Sample),
         width = c(0.84, 0.84, 0.84, 0.84, 0.84, 0.84))
-axis(1, at = 1:nrow(df), labels = samples, las = 2, cex.axis = 0.3)
+axis(1, at = 1:nrow(df), labels = samples, las = 2, cex.axis = 0.4)
 legend('topleft', c('Clover','Honeydew','Kamahi','Manufacturing','Manuka',
                     'Polyfloral'), pch = c(15,15,15,15,15,15),
-       col = c('black','red','green','blue','turquoise','magenta'), cex = 0.3)
+       col = c('black','red','green','blue','turquoise','magenta'), cex = 0.4)
 dev.off()
 
 
-# Boxplots
+# Box plot
 jpeg('figs/boxplot_Ba.jpeg', res = 300, units = 'cm', height = 8, width = 8)
 par(mar = c(4,2,1,0.5)) 
-plot(df$Sample, df$Ba, xlab = 'Floral', ylab = '', cex.axis = 0.3) 
+plot(df$Sample, df$Ba, xlab = 'Floral', ylab = '', cex.axis = 0.4) 
 dev.off()
 
 
@@ -559,22 +559,22 @@ dev.off()
 # Bar plot
 jpeg('figs/barplot_La.jpeg', res = 300, units = 'cm', height = 8, width = 8)
 par(mar = c(4,4,1,0.5))
-barplot(df$La, xaxt = 'n', cex.axis = 0.3,
+barplot(df$La, xaxt = 'n', cex.axis = 0.4,
         xlab = 'Floral', 
         ylab = 'La [unknown]',
         col = as.factor(df$Sample),
         width = c(0.84, 0.84, 0.84, 0.84, 0.84, 0.84))
-axis(1, at = 1:nrow(df), labels = samples, las = 2, cex.axis = 0.3)
+axis(1, at = 1:nrow(df), labels = samples, las = 2, cex.axis = 0.4)
 legend('topleft', c('Clover','Honeydew','Kamahi','Manufacturing','Manuka',
                     'Polyfloral'), pch = c(15,15,15,15,15,15),
-       col = c('black','red','green','blue','turquoise','magenta'), cex = 0.3)
+       col = c('black','red','green','blue','turquoise','magenta'), cex = 0.4)
 dev.off()
 
 
-# Boxplots
+# Box plot
 jpeg('figs/boxplot_La.jpeg', res = 300, units = 'cm', height = 8, width = 8)
 par(mar = c(4,2,1,0.5)) 
-plot(df$Sample, df$La, xlab = 'Floral', ylab = '', cex.axis = 0.3) 
+plot(df$Sample, df$La, xlab = 'Floral', ylab = '', cex.axis = 0.4) 
 dev.off()
 
 
@@ -582,22 +582,22 @@ dev.off()
 # Bar plot
 jpeg('figs/barplot_Ce.jpeg', res = 300, units = 'cm', height = 8, width = 8)
 par(mar = c(4,4,1,0.5))
-barplot(df$Ce, xaxt = 'n', cex.axis = 0.3,
+barplot(df$Ce, xaxt = 'n', cex.axis = 0.4,
         xlab = 'Floral', 
         ylab = 'Ce [unknown]',
         col = as.factor(df$Sample),
         width = c(0.84, 0.84, 0.84, 0.84, 0.84, 0.84))
-axis(1, at = 1:nrow(df), labels = samples, las = 2, cex.axis = 0.3)
+axis(1, at = 1:nrow(df), labels = samples, las = 2, cex.axis = 0.4)
 legend('topleft', c('Clover','Honeydew','Kamahi','Manufacturing','Manuka',
                     'Polyfloral'), pch = c(15,15,15,15,15,15),
-       col = c('black','red','green','blue','turquoise','magenta'), cex = 0.3)
+       col = c('black','red','green','blue','turquoise','magenta'), cex = 0.4)
 dev.off()
 
 
-# Boxplots
+# Box plot
 jpeg('figs/boxplot_Ce.jpeg', res = 300, units = 'cm', height = 8, width = 8)
 par(mar = c(4,2,1,0.5)) 
-plot(df$Sample, df$Ce, xlab = 'Floral', ylab = '', cex.axis = 0.3) 
+plot(df$Sample, df$Ce, xlab = 'Floral', ylab = '', cex.axis = 0.4) 
 dev.off()
 
 
@@ -605,22 +605,22 @@ dev.off()
 # Bar plot
 jpeg('figs/barplot_Pb.jpeg', res = 300, units = 'cm', height = 8, width = 8)
 par(mar = c(4,4,1,0.5))
-barplot(df$Pb, xaxt = 'n', cex.axis = 0.3,
+barplot(df$Pb, xaxt = 'n', cex.axis = 0.4,
         xlab = 'Floral', 
         ylab = 'Pb [unknown]',
         col = as.factor(df$Sample),
         width = c(0.84, 0.84, 0.84, 0.84, 0.84, 0.84))
-axis(1, at = 1:nrow(df), labels = samples, las = 2, cex.axis = 0.3)
+axis(1, at = 1:nrow(df), labels = samples, las = 2, cex.axis = 0.4)
 legend('topleft', c('Clover','Honeydew','Kamahi','Manufacturing','Manuka',
                     'Polyfloral'), pch = c(15,15,15,15,15,15),
-       col = c('black','red','green','blue','turquoise','magenta'), cex = 0.3)
+       col = c('black','red','green','blue','turquoise','magenta'), cex = 0.4)
 dev.off()
 
 
-# Boxplots
+# Box plot
 jpeg('figs/boxplot_Pb.jpeg', res = 300, units = 'cm', height = 8, width = 8)
 par(mar = c(4,2,1,0.5)) 
-plot(df$Sample, df$Pb, xlab = 'Floral', ylab = '', cex.axis = 0.3) 
+plot(df$Sample, df$Pb, xlab = 'Floral', ylab = '', cex.axis = 0.4) 
 dev.off()
 
 
@@ -628,22 +628,22 @@ dev.off()
 # Bar plot
 jpeg('figs/barplot_Rb.Sr.jpeg', res = 300, units = 'cm', height = 8, width = 8)
 par(mar = c(4,4,1,0.5))
-barplot(df$Rb.Sr, xaxt = 'n', cex.axis = 0.3,
+barplot(df$Rb.Sr, xaxt = 'n', cex.axis = 0.4,
         xlab = 'Floral', 
         ylab = 'Rb.Sr [unknown]',
         col = as.factor(df$Sample),
         width = c(0.84, 0.84, 0.84, 0.84, 0.84, 0.84))
-axis(1, at = 1:nrow(df), labels = samples, las = 2, cex.axis = 0.3)
+axis(1, at = 1:nrow(df), labels = samples, las = 2, cex.axis = 0.4)
 legend('topleft', c('Clover','Honeydew','Kamahi','Manufacturing','Manuka',
                     'Polyfloral'), pch = c(15,15,15,15,15,15),
-       col = c('black','red','green','blue','turquoise','magenta'), cex = 0.3)
+       col = c('black','red','green','blue','turquoise','magenta'), cex = 0.4)
 dev.off()
 
 
-# Boxplots
+# Box plot
 jpeg('figs/boxplot_Rb.Sr.jpeg', res = 300, units = 'cm', height = 8, width = 8)
 par(mar = c(4,2,1,0.5)) 
-plot(df$Sample, df$Rb.Sr, xlab = 'Floral', ylab = '', cex.axis = 0.3) 
+plot(df$Sample, df$Rb.Sr, xlab = 'Floral', ylab = '', cex.axis = 0.4) 
 dev.off()
 
 
