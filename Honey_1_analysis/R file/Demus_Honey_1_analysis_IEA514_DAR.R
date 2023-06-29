@@ -8,7 +8,7 @@
 
 #### Preparation ####
 
-# Open Excel, modify table columns and structure
+# Open the acquired dataset with .csv in Ms. Excel, modify table columns and structure
 
 # Import the data
 df0 <- read.csv('data/honey_1.csv')
