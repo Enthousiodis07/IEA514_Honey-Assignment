@@ -777,23 +777,21 @@ summary(result_Rb.Sr)
 
 #### Cluster analysis ####
 # Prepare the data for cluster analysis
-df_temp <- dfHCA[,-1] # Remove the first column to discard the non-numeric column
-df_temp <- data.matrix(df_temp) # Change to matrix format for heatmap analysis
-row.names(df_temp) <- paste0(as.character(dfHCA[,1]), 1:nrow(df)) # Add the locations to the plot
+dfHCA_temp <- dfHCA[,-1] # Remove the first column to discard the non-numeric column
+dfHCA_temp <- data.matrix(dfHCA_temp) # Change to matrix format for heatmap analysis
+row.names(dfHCA_temp) <- paste0(as.character(dfHCA[,1]), 1:nrow(dfHCA)) # Add the locations to the plot
 
 jpeg('figs/heatmap_honey_1.jpeg', res = 300, units = 'cm', height = 16, width = 20)
-# The margins of the plot: bottom, left, top, right
 par(mar = c(2,2,2,2))
-heatmap(df_temp)
+heatmap(dfHCA_temp)
 dev.off()
 
 
 ## Cluster analysis using the complete method
 # Linkage method is complete
 jpeg('figs/hc_complete_honey_1.jpeg', res = 300, units = 'cm', height = 8, width = 8)
-# The margins of the plot: bottom, left, top, right
 par(mar = c(2,2,2,2))
-hc <- hclust(dist(df_temp), 
+hc <- hclust(dist(dfHCA_temp), 
              method = 'complete')
 plot(hc, labels = dfHCA$Sample, main = 'Complete', hang = -1, cex = 0.3)
 dev.off()
@@ -801,9 +799,8 @@ dev.off()
 
 # Linkage method is average
 jpeg('figs/hc_average_honey_1.jpeg', res = 300, units = 'cm', height = 8, width = 8)
-# The margins of the plot: bottom, left, top, right
 par(mar = c(2,2,2,2))
-hc <- hclust(dist(df_temp), 
+hc <- hclust(dist(dfHCA_temp), 
              method = 'average')
 plot(hc, labels = dfHCA$Sample, main = 'Average', hang = -1, cex = 0.3)
 dev.off()
@@ -825,7 +822,6 @@ honey_1.pca <- prcomp(df[,-1], # Remove the first column
                   scale. = TRUE) # Need to be scaled because of magnitude diff.
 
 jpeg('figs/biplot_honey_1.jpeg', res = 300, units = 'cm', height = 16, width = 16)
-# The margins of the plot: bottom, left, top, right
 par(mar = c(4,4,1,1))
 plot(honey_1.pca$x[,1:2], # Plot only the first and second PCs
      pch = 20,        # The marker 
