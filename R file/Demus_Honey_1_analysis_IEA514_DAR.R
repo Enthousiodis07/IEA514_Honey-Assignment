@@ -769,7 +769,7 @@ dfHCA$Concatenated <- paste(dfHCA$Floral, dfHCA$Island) # add new column, combin
 dfHCA <- dfHCA[,c(1, 33, 2:32)]
 
 colnames(dfHCA)[2] = "Sample" # rename new column
-dfHCA <- dfHCA[, c(-1, -3:-8)] # delete non-numerical columns other than Column 2
+dfHCA <- dfHCA[, -c(1, 3:8)] # delete non-numerical columns other than Column 2
 View(dfHCA)
 
 # Prepare the data for cluster analysis
