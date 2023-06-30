@@ -7,7 +7,6 @@
 
 
 #### Preparation ####
-
 # Open the acquired dataset with .csv in Ms. Excel, modify table columns and structure
 
 # Import the data
@@ -24,24 +23,12 @@ df0 <- df0[order(df0$Floral), ] # primary data
 View(df0)
 
 # Deletion of unnecessary columns and change of 'Floral' column name
-df <- df0[, c(-1, -3:-7)] # floral data
+df <- df0[,-c(1, 3:7)] # floral data
 colnames(df)[1] = "Sample"
 View(df)
 
-#### Data for HCA ####
-dfHCA <- df0[order(df0$Island), ] # primary data
-dfHCA$Concatenated <- paste(dfHCA$Floral, dfHCA$Island) # add new column, combine Col 2 and 4
-dfHCA <- dfHCA[,c(1, 33, 2:32)]
-
-colnames(dfHCA)[2] = "Sample" # rename new column
-dfHCA <- dfHCA[, c(-1, -3:-8)] # delete non-numerical columns other than Column 2
-View(dfHCA)
-
-dfHCA$Sample <- as.factor(dfHCA$Sample) # factor column sample HCA
-
 
 #### Exploratory plots ####
-
 # Names for the x labels
 samples <- c(rep('Clover',9), rep('Honeydew', 6), rep('Kamahi', 4), 
              rep('Manufacturing', 3), rep('Manuka', 15), rep('Polyfloral', 3))
@@ -647,7 +634,7 @@ plot(df$Sample, df$Rb.Sr, xlab = 'Floral', ylab = '', cex.axis = 0.4)
 dev.off()
 
 
-
+#### ANOVA ####
 #### ANOVA for Li ####
 df_aov_Li <- df[,c(1,2)]
 result_Li <- aov(Li ~ Sample, data = df_aov_Li)
@@ -776,6 +763,17 @@ summary(result_Rb.Sr)
 
 
 #### Cluster analysis ####
+# Data for HCA
+dfHCA <- df0[order(df0$Island), ] # primary data
+dfHCA$Concatenated <- paste(dfHCA$Floral, dfHCA$Island) # add new column, combine Col 2 and 4
+dfHCA <- dfHCA[,c(1, 33, 2:32)]
+
+colnames(dfHCA)[2] = "Sample" # rename new column
+dfHCA <- dfHCA[, c(-1, -3:-8)] # delete non-numerical columns other than Column 2
+View(dfHCA)
+
+dfHCA$Sample <- as.factor(dfHCA$Sample) # factor column sample HCA
+
 # Prepare the data for cluster analysis
 dfHCA_temp <- dfHCA[,-1] # Remove the first column to discard the non-numeric column
 dfHCA_temp <- data.matrix(dfHCA_temp) # Change to matrix format for heatmap analysis
