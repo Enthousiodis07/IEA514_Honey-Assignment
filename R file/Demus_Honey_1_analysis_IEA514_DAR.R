@@ -809,9 +809,9 @@ dev.off()
 plot(hc, labels = df$HCASample, cex = 0.5)
 
 #Optional: K-means clustering
-#k_means <- kmeans(df_temp, 3, nstart = 20)
+#k_means <- kmeans(dfHCA_temp, 3, nstart = 20)
 #k_means
-#table(k_means$cluster, df$Sample)
+#table(k_means$cluster, dfHCA$Sample)
 
 #### PCA ####
 #install.packages('car') # Only one time install
